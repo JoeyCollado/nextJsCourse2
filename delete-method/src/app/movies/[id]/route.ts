@@ -57,8 +57,8 @@ export async function PATCH(
     req: Request,
     { params }: { params: { id: string } }
   ) {
-    const { id } = params;
-    const movieId = +id;
+    const { id } = params; //destructure id
+    const movieId = +id; //convert to number
   
     // Find the movie index
     const index = movies.findIndex((m) => m.id === movieId);
