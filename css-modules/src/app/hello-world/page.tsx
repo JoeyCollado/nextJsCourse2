@@ -11,3 +11,4 @@ const page = () => {
 
 export default page
 
+//page.module.css = here we can define predefined styles that is reusable to any component
