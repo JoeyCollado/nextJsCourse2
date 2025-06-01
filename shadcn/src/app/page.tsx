@@ -19,7 +19,5 @@ const Home = () => {
 
 export default Home;
 
-//lukacho ui = https://ui.lukacho.com/
-//npm i clsx tailwind-merge framer-motion @tabler/icons-react
-//http://localhost:3000/accordion
-//http://localhost:3000/cursor
+// shadcn = powerful ui component library
+// https://ui.shadcn.com/
