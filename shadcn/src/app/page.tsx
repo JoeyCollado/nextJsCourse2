@@ -21,3 +21,4 @@ export default Home;
 
 // shadcn = powerful ui component library
 // https://ui.shadcn.com/
+// npx shadcn@latest init
