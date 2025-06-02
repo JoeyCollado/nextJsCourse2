@@ -23,3 +23,6 @@ export default Home;
 // npx shadcn@latest init
 //npx shadcn@latest add "https://magicui.design/r/bento-grid"
 //http://localhost:3000/dock
+//npx shadcn@latest add "https://magicui.design/r/animated-list"
+//npx shadcn@latest add "https://magicui.design/r/marquee"
+//npx shadcn@latest add "https://magicui.design/r/animated-beam"

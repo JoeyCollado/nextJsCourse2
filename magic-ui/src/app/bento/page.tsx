@@ -1,9 +1,10 @@
+"use client";
+
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { BellIcon, Share2Icon } from "lucide-react";
-
+import AnimatedListDemo from "@/components/magicui/animated-list";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import AnimatedListDemo from "@/components/magicui/animated-list";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { Marquee } from "@/components/magicui/marquee";
 
@@ -74,7 +75,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      null
+        <AnimatedListDemo className="absolute right-2 top-4 h-[300px] w-full scale-75 border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-90" />
     ),
   },
   {
@@ -85,7 +86,7 @@ const features = [
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <AnimatedBeamMultipleOutputDemo className="absolute right-2 top-4 h-[300px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+    null
     ),
   },
   {
@@ -105,7 +106,7 @@ const features = [
   },
 ];
 
-export function BentoDemo() {
+export default function BentoDemo() {
   return (
     <BentoGrid>
       {features.map((feature, idx) => (
