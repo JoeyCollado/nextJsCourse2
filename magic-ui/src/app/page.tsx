@@ -20,3 +20,6 @@ const Home = () => {
 export default Home;
 
 // magic ui = open source animated component library
+// npx shadcn@latest init
+//npx shadcn@latest add "https://magicui.design/r/bento-grid"
+//http://localhost:3000/dock
