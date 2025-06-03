@@ -19,10 +19,8 @@ const Home = () => {
 
 export default Home;
 
-// magic ui = open source animated component library
-// npx shadcn@latest init
-//npx shadcn@latest add "https://magicui.design/r/bento-grid"
-//http://localhost:3000/dock
-//npx shadcn@latest add "https://magicui.design/r/animated-list"
-//npx shadcn@latest add "https://magicui.design/r/marquee"
-//npx shadcn@latest add "https://magicui.design/r/animated-beam"
+//heroui 
+//npm install -g heroui-cli
+//npx @heroui/codemod@latest migrate
+//npx @heroui/codemod@latest migrate
+//npx heroui-cli@latest add accordion
