@@ -15,4 +15,4 @@ export default page
 //zinc
 
 //3d card component = npx shadcn@latest add https://ui.aceternity.com/registry/3d-card.json
-
+//npm i @tabler/icons 
