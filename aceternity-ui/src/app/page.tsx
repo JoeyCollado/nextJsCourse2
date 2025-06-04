@@ -17,3 +17,5 @@ export default page
 //3d card component = npx shadcn@latest add https://ui.aceternity.com/registry/3d-card.json
 //npm install @tabler/icons-react
 
+//http://localhost:3000/carousel
+//http://localhost:3000/3d
