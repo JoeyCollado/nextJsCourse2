@@ -9,3 +9,5 @@ const page = () => {
 }
 
 export default page
+
+//to create a parallel route = simply prefix the folder name with @
