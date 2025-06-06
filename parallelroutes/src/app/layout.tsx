@@ -1,23 +1,29 @@
 import { ReactNode } from "react";
-import "../globals.css";
-
-type LayoutProps = {
-  children: ReactNode;
-  team: ReactNode;
-  comments: ReactNode;
-};
+import "./globals.css";
 
 export const metadata = {
   title: "Members",
   description: "members page",
 };
 
-const Layout = ({ children, team, comments }: LayoutProps) => {
+type LayoutProps = {
+  children: ReactNode; // default slot
+  members: ReactNode; // parallel route @team
+  comments: ReactNode; // parallel route @comments
+};
+
+const Layout = ({ children, members, comments }: LayoutProps) => {
   return (
     <>
-      <section>{children}</section>
-      <section className="border p-[10rem] w-[30rem]">{team}</section>
-      <section className="border p-[10rem] w-[30rem]">{comments}</section>
+      <html>
+        <body>
+          <h1>{children}</h1>
+          <div className="flex justify-center">
+            {comments}
+            {members}
+          </div>
+        </body>
+      </html>
     </>
   );
 };
