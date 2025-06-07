@@ -1,11 +1,6 @@
-import React from 'react'
 
 const DefaultComponent = () => {
-  return (
-    <div>
-Default Component
-    </div>
-  )
+  return null
 }
 
 export default DefaultComponent;
