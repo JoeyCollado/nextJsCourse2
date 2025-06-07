@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
@@ -8,7 +9,8 @@ const page = () => {
 
   return (
     <div className='border p-[10rem] w-[30rem]'>
-      Members
+      <h1>Members</h1>
+      <Link href='/salaries'>Go to salary</Link>
     </div>
   )
 }
