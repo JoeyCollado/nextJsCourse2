@@ -1,4 +1,4 @@
-import { Home } from "lucide-react";
+import { Clock, Home, TrendingUp } from "lucide-react";
 import React from "react";
 
 const Sidebar = () => {
@@ -10,6 +10,12 @@ const Sidebar = () => {
           <ul>
             <li className="flex items-center gap-2 p-2 hover:bg-[#171717] rounded-md cursor-pointer">
               <Home /> Discover
+            </li>
+            <li className="flex items-center gap-2 p-2 hover:bg-[#171717] rounded-md cursor-pointer">
+              <TrendingUp /> Trending
+            </li>
+            <li className="flex items-center gap-2 p-2 hover:bg-[#171717] rounded-md cursor-pointer">
+              <Clock /> Recent
             </li>
           </ul>
         </nav>
