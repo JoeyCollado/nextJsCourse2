@@ -20,6 +20,18 @@ const Sidebar = () => {
           </ul>
         </nav>
       </section>
+
+      <section>
+        <h2 className="mt-6 text-xl font-bold">Favorites</h2>
+        <ul className="mt-2 mb-[2rem]">
+          {[1,2,3,4,5].map(i => (  //render multiple items
+            <div key={i} className="flex mt-[2rem] gap-4">
+              <img src="/id.png" alt=""></img>
+            </div>
+          ))}
+        </ul>
+      </section>
+
     </aside>
   );
 };
