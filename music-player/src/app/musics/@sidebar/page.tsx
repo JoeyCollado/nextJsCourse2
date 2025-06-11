@@ -26,7 +26,12 @@ const Sidebar = () => {
         <ul className="mt-2 mb-[2rem]">
           {[1,2,3,4,5].map(i => (  //render multiple items
             <div key={i} className="flex mt-[2rem] gap-4">
-              <img src="/id.png" alt=""></img>
+              <img src="/id.png" alt="" className="h-15 w-15 bg-gray-700 rounded-md"></img>
+
+              <div>
+                <p className="text-white">Random</p>
+                <p className="text-sm text-gray-400">Person</p>
+              </div>
             </div>
           ))}
         </ul>
