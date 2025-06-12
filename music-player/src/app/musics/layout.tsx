@@ -12,7 +12,7 @@ const MusicLayout = ({
   return (
     <div className="flex">
       {sidebar}
-      <div>{songs}</div>
+      <div className="flex-1 p-6w">{songs}</div>
       {children}
     </div>
   );
