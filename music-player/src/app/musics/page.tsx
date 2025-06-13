@@ -54,6 +54,7 @@ const page = () => {
               <div className="flex items-center gap-6 text-gray-400">
                 <div className="flex items-center gap-1">
                   <Clock size={16}/>
+                  <span>{song.time}</span>
                 </div>
               </div>
             </li>
