@@ -1,4 +1,4 @@
-import { Clock, Heart } from "lucide-react";
+import { Clock, Heart, Link } from "lucide-react";
 
 const page = async () => {
 
@@ -41,7 +41,9 @@ const page = async () => {
         <h2 className="text-3xl text-white mt-8 font-bold mb-6">Songs Collection</h2>
 
         <ul className="space-y-4">
+       
           {songs.map((song) => (
+               <Link href={`/musics/${song.id}`} key={song.id}>
             <li
               key={song.id}
               className="flex items-center justify-between p-3 hover:bg-[#2A2929] rounded-md cursor-pointer transition-all duration-200 ease-in-out transform hover:scale-105"
@@ -69,6 +71,7 @@ const page = async () => {
                 <button className="text-lg font-bold">:</button>
               </div>
             </li>
+            </Link>
           ))}
         </ul>
       </div>
