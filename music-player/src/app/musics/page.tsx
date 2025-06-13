@@ -1,3 +1,5 @@
+import { Clock } from "lucide-react";
+
 const page = () => {
   const songs = [
     {
@@ -42,6 +44,17 @@ const page = () => {
                   src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Unsplash image"
                 />
+
+                <div>
+                  <p className="text-white font-medium">{song.artist}</p>
+                  <p className="text-sm text-gray-4">{song.title}</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6 text-gray-400">
+                <div className="flex items-center gap-1">
+                  <Clock size={16}/>
+                </div>
               </div>
             </li>
           ))}
