@@ -1,4 +1,4 @@
-import { Clock } from "lucide-react";
+import { Clock, Heart } from "lucide-react";
 
 const page = () => {
   const songs = [
@@ -56,6 +56,8 @@ const page = () => {
                   <Clock size={16}/>
                   <span>{song.time}</span>
                 </div>
+
+                <Heart size={16} className="cursor-pointer hover:text-red-500"/>
               </div>
             </li>
           ))}
