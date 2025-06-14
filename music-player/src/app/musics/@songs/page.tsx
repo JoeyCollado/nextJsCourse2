@@ -1,4 +1,5 @@
-import { Clock, Heart, Link } from "lucide-react";
+import { Clock, Heart } from "lucide-react";
+import Link from "next/link";
 
 const page = async () => {
 
