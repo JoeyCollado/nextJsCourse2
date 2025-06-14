@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Player = () => {
+const DefaultContent = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Player = () => {
   )
 }
 
-export default Player
+export default DefaultContent
