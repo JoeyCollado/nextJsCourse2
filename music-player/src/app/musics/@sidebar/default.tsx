@@ -15,7 +15,7 @@ const Default = () => {
             <TrendingUp /> Trending
           </li>
           <li className="flex items-center gap-2 p-2 hover:bg-[#171717] rounded-md cursor-pointer">
-            <Cock /> Recent
+            <Clock /> Recent
           </li>
         </ul>
       </nav>
