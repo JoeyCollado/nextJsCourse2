@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 const page = () => {
@@ -25,10 +26,24 @@ const page = () => {
             "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
       ];
-      
+
   return (
     <div>
-      Ecommerce
+      <section className='m-[4rem]'>
+        <div>
+            <h1 className='text-3xl mb-3'>E-commerece</h1>
+        </div>
+      </section>
+
+      <section className="flex gap-3">
+        {products.map((product) => (
+            <div className='w-[200px] border' key={product.id}>
+                <Link href={`/ecommerce${product.id}`}>
+                <img src={product.image} alt=''/>
+                </Link>
+            </div>
+        ))}
+      </section>
     </div>
   )
 }
