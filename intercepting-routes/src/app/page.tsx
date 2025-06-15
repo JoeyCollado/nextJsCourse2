@@ -9,3 +9,5 @@ const page = () => {
 }
 
 export default page
+
+//interecpting routes = load a new route within the current layout while masking the browser URL, useful for advanced routing patterns such as modals. ex = pop up model
