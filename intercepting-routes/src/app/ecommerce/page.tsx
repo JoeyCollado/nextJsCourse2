@@ -38,7 +38,7 @@ const page = () => {
       <section className="flex gap-3">
         {products.map((product) => (
             <div className='w-[200px] border' key={product.id}>
-                <Link href={`/ecommerce${product.id}`}>
+                <Link href={`/ecommerce/${product.id}`}>
                 <img src={product.image} alt={product.name}/>
                 <h2>{product.name}</h2>
                 <p>{product.price}</p>
