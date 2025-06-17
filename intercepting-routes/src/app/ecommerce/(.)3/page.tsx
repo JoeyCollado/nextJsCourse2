@@ -1,9 +1,17 @@
-import { X } from "lucide-react";
+"use client";
 
-const InterceptedProduct2 = () => {
+import { X } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+const InterceptedProduct3 = () => {
+    
+  const router = useRouter();
+
+  const closeModal = () => router.push("/ecommerce");
+
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50" onClick={closeModal}>
         <div className="bg-white p-8 rounded-lg shadow-lg text-center relative">
           <button
             title="pop up exit button"
@@ -27,4 +35,4 @@ const InterceptedProduct2 = () => {
   );
 };
 
-export default InterceptedProduct2;
+export default InterceptedProduct3;
