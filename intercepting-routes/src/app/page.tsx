@@ -16,3 +16,4 @@ export default page
 // (.) = our route is located somewhere in this directory
 //refactored code 
 //dynamic routes
+//done
