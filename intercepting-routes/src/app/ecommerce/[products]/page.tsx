@@ -30,8 +30,12 @@ const Product = async ({params}: {params: {product: string}}) => {
       //find specific product
       const findProduct = products.find((p) => p.id === +product)
   return (
-    <div>
-      
+    <div className="m-[4rem]">
+      <h1>{findProduct?.name}</h1>
+
+      <img src={findProduct?.image} alt={findProduct?.name}></img>
+
+      <p>{findProduct?.price}</p>
     </div>
   )
 }
