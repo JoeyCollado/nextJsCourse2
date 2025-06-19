@@ -14,4 +14,5 @@ export default page
 
 //(.)1 = intercepting route naming convention ex = (.) = means the intercepting route belongs to the route that predates it, 1 is because we have to search for that id, example if we have apples the convetion will be = (.)apples
 // (.) = our route is located somewhere in this directory
-//ugly code
+//refactored code 
+//dynamic routes
