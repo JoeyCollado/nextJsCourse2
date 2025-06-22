@@ -5,7 +5,7 @@ import React from 'react'
 
 const Games = () => {
   return (
-    <div>
+    <div className='flex h-screen'>
       {/* Sidebar */}
       <Sidebar/>
       <div className="flex-1 bg-gray-100 p-5">
