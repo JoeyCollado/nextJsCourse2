@@ -1,4 +1,5 @@
-import { products } from "@/db/data";
+import { products } from "@/app/db/data";
+
 
 const InterceptedProduct = async ({
     params,

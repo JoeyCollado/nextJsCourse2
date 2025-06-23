@@ -1,4 +1,4 @@
-import { products } from "@/db/data";
+import { products } from "@/app/db/data";
 
 const Product = async ({ params }: { params: { product: string } }) => {
   const { product } = await params;
