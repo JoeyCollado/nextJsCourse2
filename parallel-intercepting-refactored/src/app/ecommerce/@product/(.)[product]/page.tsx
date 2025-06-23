@@ -14,7 +14,7 @@ const InterceptedProduct = async ({
       <>
         <div className="fixed inset-0 flex items-center justify-center bg-black/80   z-50">
           <div className="bg-white p-8 rounded-lg shadow-lg text-center relative">
-            <h1 className="text-3xl mb-4">{findProduct?.name}</h1>
+            <h1 className="text-3xl mb-4 text-black">{findProduct?.name}</h1>
   
             <img
               src={findProduct?.image}
@@ -22,7 +22,7 @@ const InterceptedProduct = async ({
               className="w-[40rem] mx-auto rounded-lg"
             />
   
-            <p className="text-2xl mt-4">Price: {findProduct?.price}</p>
+            <p className="text-2xl mt-4 text-black">Price: {findProduct?.price}</p>
           </div>
         </div>
       </>
