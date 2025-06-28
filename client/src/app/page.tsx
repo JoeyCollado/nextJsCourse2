@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 
 const Movies = () => {
 
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
+  console.log("This message is coming from client component")
 
   return (
     <div>
