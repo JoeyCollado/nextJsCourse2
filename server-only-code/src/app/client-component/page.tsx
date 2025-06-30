@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import {add,subtract} from '@/utils/index'
 
@@ -10,7 +11,7 @@ const ServerComp = () => {
 
   return (
     <div>
-      Server Component
+      Client Component
     </div>
   )
 }
