@@ -1,6 +1,6 @@
 //codes here only run on the client side
 
-import 'server-only';
+import 'client-only';
 
 export const add = (a:number, b:number) => a + b;
 
