@@ -70,3 +70,5 @@ const TodoComponent = () => {
 };
 
 export default TodoComponent;
+
+//client data fetching = not recommend way of data fetching
