@@ -7,7 +7,8 @@ const ToDoComponent = async () => {
    console.log(data);
   return (
     <div>
-      
+      <h1>{data.title}</h1>
+      <p>{data.completed ? "Completed" : "Not Completed"}</p>
     </div>
   )
 }
