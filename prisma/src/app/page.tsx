@@ -15,4 +15,5 @@ const Movies = () => {
 export default Movies
 
 
-//server component = by default is what we use in nextjs
+//in order to interact with a database u need a dbms which is complext
+//prisma = allow us to communicate with with our database using javascript and typescript by providing an api
