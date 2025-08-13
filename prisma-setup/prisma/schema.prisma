@@ -10,3 +10,17 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+//how the movie should look like
+model Movie{
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  genre String
+  releaseDate DateTime
+  rating Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+//telling prisma how the movie should look like - npx prisma migrate dev --name init
