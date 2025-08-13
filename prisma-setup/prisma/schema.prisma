@@ -24,3 +24,4 @@ model Movie{
 }
 
 //telling prisma how the movie should look like - npx prisma migrate dev --name init
+//command to verify if our prisma is working or not - npx prisma studio
