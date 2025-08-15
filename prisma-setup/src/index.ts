@@ -6,14 +6,14 @@ const prisma = new PrismaClient() //instance of prisma client
 async function createMovie(){
    const newMovie = await prisma.movie.create({
      data: {
-        title: 'Inception',
+        title: 'Inception2',
         description: 'A cinematic masterpiece that seamlessly blends reality and dreams, Inception is a captivating story of a dream within a dream',
         genre: "Sci-Fi",
         releaseDate: new Date('2010-07-16'),
         rating: 8.8,
 
      }
-    }) //accessing our prisma and movie schema and performing create query
+    }) //accessing our prisma and movie schema and performing create query, adding specific data to our database
     console.log(newMovie);
 }
 
