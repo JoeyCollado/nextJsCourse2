@@ -18,7 +18,7 @@ async function createMovie(){
 }
 
 async function createMultipleMovies(){
-   await prisma.movie.createMany({
+   const movies = await prisma.movie.createMany({
     data: [
         {
             title: "The Dark Knight",
@@ -45,6 +45,7 @@ async function createMultipleMovies(){
           },
     ]
    })
+   console.log(movies);
 }
 
 async function main(){//function to allow us to run our queries
