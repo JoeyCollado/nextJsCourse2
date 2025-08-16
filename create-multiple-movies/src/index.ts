@@ -17,9 +17,40 @@ async function createMovie(){
     console.log(newMovie);
 }
 
+async function createMultipleMovies(){
+   await prisma.movie.createMany({
+    data: [
+        {
+            title: "The Dark Knight",
+            description: "A superhero movie that follows the story of Batman.",
+            genre: "Action",
+            rating: 8.8,
+            releaseDate: new Date("2008-07-18"),
+          },
+          {
+            title: "Interstellar",
+            description:
+              "A science fiction movie that explores the possibilities of interstellar travel.",
+            rating: 8.6,
+            genre: "Sci-Fi",
+            releaseDate: new Date("2014-11-07"),
+          },
+          {
+            title: "Alien Covenant",
+            description:
+              "A science fiction movie that explores the possibilities of interstellar travel.",
+            rating: 8.6,
+            genre: "Sci-Fi",
+            releaseDate: new Date("2014-11-07"),
+          },
+    ]
+   })
+}
+
 async function main(){//function to allow us to run our queries
     // C.R.U.D
-    await createMovie(); //executing createMovie function
+    //await createMovie(); //executing createMovie function
+    await createMultipleMovies(); //execute create multi movie function
 }
 
 //call function
