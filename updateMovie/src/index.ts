@@ -64,7 +64,17 @@ async function getMovieById(movieId:number){
 
 //function to update a specific movie
 async function updateMovie(movieId:number, updateTitle: string, updatedDescription: string, updatedGenre: string){
+  const updatedMovie = await prisma.movie.update({
+    where: {id: movieId}, //where we find movie
+    //how we update movie
+    data: {
+      title: updateTitle,
+      description: updatedDescription,
+      genre: updatedGenre
+    },
+  });
 
+  console.log("Updated Movie: ", updateMovie)
 }
 
 async function main(){//function to allow us to run our queries
@@ -72,7 +82,8 @@ async function main(){//function to allow us to run our queries
     //await createMovie(); //executing createMovie function
     //await createMultipleMovies(); //execute create multi movie function
     //await getAllMovies();
-    await getMovieById(5); // get specific movie by id
+    //await getMovieById(5); // get specific movie by id
+    await updateMovie(1, "Updated title", "Updated description", "Updated genre") // update specific movie by id
 }
 
 //call function
