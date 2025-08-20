@@ -77,13 +77,22 @@ async function updateMovie(movieId:number, updateTitle: string, updatedDescripti
   console.log("Updated Movie: ", updateMovie)
 }
 
+//function to delete movie
+async function deleteMovie(movieId: number){
+  const deletedMovie = await prisma.movie.delete({
+    where : {id: movieId}
+  });
+  console.log("Deleted Movie:", deletedMovie);
+} 
+
 async function main(){//function to allow us to run our queries
     // C.R.U.D
     //await createMovie(); //executing createMovie function
     //await createMultipleMovies(); //execute create multi movie function
     //await getAllMovies();
     //await getMovieById(5); // get specific movie by id
-    await updateMovie(1, "Updated title", "Updated description", "Updated genre") // update specific movie by id
+    //await updateMovie(1, "Updated title", "Updated description", "Updated genre") // update specific movie by id
+    await deleteMovie(1); //get specific movie id and delete it
 }
 
 //call function
