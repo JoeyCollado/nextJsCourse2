@@ -14,3 +14,4 @@ export default page
 //prisma initialization and telling prisma what database are we using = npx prisma init --datasource-provider
 //npx prisma init --datasource-provider sqlite
 //migrating our schema changes = npx prisma migrate dev --name init
+//checking prisma studio = npx prisma studio
