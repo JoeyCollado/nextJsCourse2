@@ -9,3 +9,5 @@ const page = () => {
 }
 
 export default page
+
+//prisma install = npm i -D prisma
