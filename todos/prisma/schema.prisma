@@ -10,3 +10,9 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Todo{
+  id String @id @default(uuid()) //give us unique id
+  input String 
+  createdAt DateTime @default(now())
+}
