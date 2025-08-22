@@ -13,3 +13,4 @@ export default page
 //prisma install = npm i -D prisma
 //prisma initialization and telling prisma what database are we using = npx prisma init --datasource-provider
 //npx prisma init --datasource-provider sqlite
+//migrating our schema changes = npx prisma migrate dev --name init
