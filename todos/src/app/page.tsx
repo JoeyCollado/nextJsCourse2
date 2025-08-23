@@ -3,7 +3,10 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-      
+      <form>
+        <input type='text' name='input' placeholder='Add a new Todo...'/>
+        <button type='submit'>Add Todo</button>
+      </form>
     </div>
   )
 }
