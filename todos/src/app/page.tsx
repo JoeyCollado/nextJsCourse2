@@ -2,11 +2,21 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>
-      <form>
-        <input type='text' name='input' placeholder='Add a new Todo...'/>
-        <button type='submit'>Add Todo</button>
-      </form>
+    <div className="bg-white rounded-xl shadow-2xl p-8 ">
+     <form className="flex flex-col gap-4">
+          <input
+            type="text"
+            name="input"
+            placeholder="Add a new todo..."
+            className="px-4 py-2 border-2 border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300"
+          />
+          <button
+            type="submit"
+            className="bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700 transition duration-300"
+          >
+            Add Todo
+          </button>
+        </form>
     </div>
   )
 }
