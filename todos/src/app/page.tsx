@@ -1,9 +1,16 @@
 import React from 'react'
 
 const page = () => {
+  //create todo 
+  async function createTodo(formData: FormData){ //regular function, turn server action
+    "use server";
+
+     formData.get('input')
+  }
+
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
-     <form className="flex flex-col gap-4">
+     <form  action={createTodo} className="flex flex-col gap-4">
           <input
             type="text"
             name="input"
