@@ -5,7 +5,7 @@ const page = () => {
   async function createTodo(formData: FormData){ //regular function, turn server action
     "use server";
 
-     formData.get('input')
+     const input = formData.get('input') //grabbing the data of form input
   }
 
   return (
