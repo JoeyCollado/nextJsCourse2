@@ -1,11 +1,16 @@
+import { db } from '@/utils/db';
 import React from 'react'
 
 const page = () => {
   //create todo 
-  async function createTodo(formData: FormData){ //regular function, turn server action
+  async function createTodo(formData: FormData){ //regular function, turn server action, formData will get us the entire form data inside return function
     "use server";
 
-     const input = formData.get('input') //grabbing the data of form input
+     const input = formData.get('input') as string; //grabbing the data of form input
+
+     await db.todo.create({
+      data: {input: input},
+     })
   }
 
   return (
