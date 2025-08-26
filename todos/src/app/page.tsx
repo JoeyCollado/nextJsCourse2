@@ -1,4 +1,4 @@
-import { db } from '@/utils/db';
+import { db } from "@/utils/db";
 import React from 'react'
 
 const page = async  () => {
@@ -41,13 +41,13 @@ const page = async  () => {
 
         {/*  */}
         <div className='mt-8 space-y-4'>
-          {data.map(todo => (
-            <form key={todo.id}>
+          {data.map((todo) => (
+            <form className="flex items-center justify-between space-x-4" key={todo.id}>
               <input type='hidden' name='inputId' value={todo.id}></input>
-              <input type='text' name='input' defaultValue={todo.input}></input>
+              <input className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" type='text' name='input' defaultValue={todo.input} title="input"></input>
               <div className="flex space-x-2">
-                <button type='submit'>Save</button>
-                <button>Delete</button>
+                <button className="bg-pink-500 text-white py-1.5 px-4 rounded-lg hover:bg-pink-600 transition duration-300 ml-[.4rem]" type='submit'>Save</button>
+                <button className="bg-red-500 text-white py-1.5 px-4 rounded-lg hover:bg-red-600 transition duration-300 ml-[.4rem]">Delete</button>
               </div>
             </form>
           ))}
