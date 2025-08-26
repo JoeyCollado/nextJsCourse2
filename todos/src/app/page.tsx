@@ -38,6 +38,20 @@ const page = async  () => {
             Add Todo
           </button>
         </form>
+
+        {/*  */}
+        <div className='mt-8 space-y-4'>
+          {data.map(todo => (
+            <form key={todo.id}>
+              <input type='hidden' name='inputId' value={todo.id}></input>
+              <input type='text' name='input' defaultValue={todo.input}></input>
+              <div className="flex space-x-2">
+                <button type='submit'>Save</button>
+                <button>Delete</button>
+              </div>
+            </form>
+          ))}
+        </div>
     </div>
   )
 }
