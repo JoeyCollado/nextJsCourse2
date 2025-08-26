@@ -1,7 +1,8 @@
 import { db } from '@/utils/db';
 import React from 'react'
 
-const page = () => {
+const page = async  () => {
+
   //create todo 
   async function createTodo(formData: FormData){ //regular function, turn server action, formData will get us the entire form data inside return function
     "use server";
@@ -12,6 +13,14 @@ const page = () => {
       data: {input: input},
      })
   }
+
+  //get todo (rendering)
+  const data = await db.todo.findMany({
+    select:{
+      input: true,
+      id: true,
+    }
+  })
 
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
