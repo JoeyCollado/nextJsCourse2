@@ -27,7 +27,7 @@ const page = async  () => {
     'use server';
     //get input and input id
     const input = formData.get('input') as string
-  }
+    const inputId = formData.get('inputId') as string
 
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
