@@ -24,7 +24,9 @@ const page = async  () => {
 
   //update todo
   async function editTodo(formData: FormData){
-    
+    'use server';
+    //get input and input id
+    const input = formData.get('input') as string
   }
 
   return (
