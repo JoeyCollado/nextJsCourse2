@@ -22,6 +22,11 @@ const page = async  () => {
     }
   })
 
+  //update todo
+  async function editTodo(formData: FormData){
+    
+  }
+
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
      <form  action={createTodo} className="flex flex-col gap-4">
