@@ -29,6 +29,12 @@ const page = async  () => {
     const input = formData.get('input') as string
     const inputId = formData.get('inputId') as string
 
+    //update data
+    await db.todo.update({
+      where: {id: inputId}, //get id
+      data: {input: input}, //change input 
+    })
+  }
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
      <form  action={createTodo} className="flex flex-col gap-4">
@@ -49,7 +55,7 @@ const page = async  () => {
         {/*  */}
         <div className='mt-8 space-y-4'>
           {data.map((todo) => (
-            <form className="flex items-center justify-between space-x-4" key={todo.id}>
+            <form className="flex items-center justify-between space-x-4" key={todo.id} action={editTodo}>
               <input type='hidden' name='inputId' value={todo.id}></input>
               <input className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" type='text' name='input' defaultValue={todo.input} title="input"></input>
               <div className="flex space-x-2">
@@ -62,6 +68,7 @@ const page = async  () => {
     </div>
   )
 }
+
 
 export default page
 
