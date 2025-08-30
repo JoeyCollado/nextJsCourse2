@@ -35,6 +35,17 @@ const page = async  () => {
       data: {input: input}, //change input 
     })
   }
+
+    //delete data
+    async function deleteTodo(formData: FormData){
+      'use server';
+      //get input id
+      const inputId = formData.get('inputId') as string
+      //what to do
+      await db.todo.delete({
+        where: {id: inputId},
+      })
+    }
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
      <form  action={createTodo} className="flex flex-col gap-4">
@@ -60,7 +71,7 @@ const page = async  () => {
               <input className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" type='text' name='input' defaultValue={todo.input} title="input"></input>
               <div className="flex space-x-2">
                 <button className="bg-pink-500 text-white py-1.5 px-4 rounded-lg hover:bg-pink-600 transition duration-300 ml-[.4rem]" type='submit'>Save</button>
-                <button className="bg-red-500 text-white py-1.5 px-4 rounded-lg hover:bg-red-600 transition duration-300 ml-[.4rem]">Delete</button>
+                <button formAction={deleteTodo } className="bg-red-500 text-white py-1.5 px-4 rounded-lg hover:bg-red-600 transition duration-300 ml-[.4rem]">Delete</button>
               </div>
             </form>
           ))}
