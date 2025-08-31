@@ -1,6 +1,6 @@
 'use server';
 //here we define our server actions
-
+import { revalidatePath } from "next/cache";
 import { db } from "@/utils/db";
 
 //create todo
@@ -12,6 +12,9 @@ export async function createTodo(formData: FormData) {
   await db.todo.create({
     data: { input: input },
   });
+
+   // 🔥 refresh data on the page
+   revalidatePath("/");
 }
 
 //update todo
@@ -25,6 +28,9 @@ export async function editTodo(formData: FormData) {
     where: { id: inputId }, //get id
     data: { input: input }, //change input
   });
+
+   // 🔥 refresh data on the page
+   revalidatePath("/");
 }
 
 //delete data
@@ -35,4 +41,7 @@ export async function deleteTodo(formData: FormData) {
   await db.todo.delete({
     where: { id: inputId },
   });
+
+   // 🔥 refresh data on the page
+   revalidatePath("/");
 }
