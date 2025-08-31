@@ -3,49 +3,14 @@ import React from 'react'
 
 const page = async  () => {
 
-  //create todo 
-  async function createTodo(formData: FormData){ //regular function, turn server action, formData will get us the entire form data inside return function
-    "use server";
-
-     const input = formData.get('input') as string; //grabbing the data of form input
-
-     await db.todo.create({
-      data: {input: input},
-     })
-  }
-
-  //get todo (rendering)
-  const data = await db.todo.findMany({
-    select:{
-      input: true,
-      id: true,
-    }
-  })
-
-  //update todo
-  async function editTodo(formData: FormData){
-    'use server';
-    //get input and input id
-    const input = formData.get('input') as string
-    const inputId = formData.get('inputId') as string
-
-    //update data
-    await db.todo.update({
-      where: {id: inputId}, //get id
-      data: {input: input}, //change input 
+    //get todo (rendering)
+    const data = await db.todo.findMany({
+      select:{
+        input: true,
+        id: true,
+      }
     })
-  }
-
-    //delete data
-    async function deleteTodo(formData: FormData){
-      'use server';
-      //get input id
-      const inputId = formData.get('inputId') as string
-      //what to do
-      await db.todo.delete({
-        where: {id: inputId},
-      })
-    }
+    
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
      <form  action={createTodo} className="flex flex-col gap-4">
