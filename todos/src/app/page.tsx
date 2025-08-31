@@ -1,5 +1,6 @@
 import { db } from "@/utils/db";
 import React from 'react'
+import * as actions from "@/actions"; //import all server actions from the folder
 
 const page = async  () => {
 
@@ -8,12 +9,16 @@ const page = async  () => {
       select:{
         input: true,
         id: true,
+      },
+
+      orderBy: {
+        id: 'desc', //display in descending order 
       }
     })
-    
+
   return (
     <div className="bg-white rounded-xl shadow-2xl p-8 ">
-     <form  action={createTodo} className="flex flex-col gap-4">
+     <form  action={actions.createTodo} className="flex flex-col gap-4">
           <input
             type="text"
             name="input"
@@ -31,12 +36,12 @@ const page = async  () => {
         {/*  */}
         <div className='mt-8 space-y-4'>
           {data.map((todo) => (
-            <form className="flex items-center justify-between space-x-4" key={todo.id} action={editTodo}>
+            <form className="flex items-center justify-between space-x-4" key={todo.id} action={actions.editTodo}>
               <input type='hidden' name='inputId' value={todo.id}></input>
               <input className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" type='text' name='input' defaultValue={todo.input} title="input"></input>
               <div className="flex space-x-2">
                 <button className="bg-pink-500 text-white py-1.5 px-4 rounded-lg hover:bg-pink-600 transition duration-300 ml-[.4rem]" type='submit'>Save</button>
-                <button formAction={deleteTodo } className="bg-red-500 text-white py-1.5 px-4 rounded-lg hover:bg-red-600 transition duration-300 ml-[.4rem]">Delete</button>
+                <button formAction={actions.deleteTodo } className="bg-red-500 text-white py-1.5 px-4 rounded-lg hover:bg-red-600 transition duration-300 ml-[.4rem]">Delete</button>
               </div>
             </form>
           ))}
