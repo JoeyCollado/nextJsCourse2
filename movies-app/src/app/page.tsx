@@ -14,3 +14,4 @@ export default page
 //npm i prisma -D
 //npx prisma init --datasource-provider sqlite
 //npx prisma migrate dev --name init
+//npx prisma studio
