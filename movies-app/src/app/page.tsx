@@ -12,3 +12,4 @@ export default page
 
 //prisma setup
 //npm i prisma -D
+//npx prisma init --datasource-provider sqlite
