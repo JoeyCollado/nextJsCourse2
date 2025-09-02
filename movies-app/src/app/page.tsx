@@ -1,14 +1,22 @@
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const page = () => {
   return (
     <div>
-      
-    </div>
-  )
-}
+      <h1>Movie app</h1>
+      <p>Manage your favorite movies in the best way</p>
 
-export default page
+      <div>
+        <Link href="/add-movies">
+          <button>Add Movie</button>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+export default page;
 
 //prisma setup
 //npm i prisma -D
