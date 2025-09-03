@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import React from 'react'
@@ -12,6 +13,11 @@ const page = () => {
 
         <Label htmlFor='description'>Description</Label>
         <Input name='description' required/>
+
+        <Label htmlFor='imageUrl'>Image Url</Label>
+        <Input type='text' name='imageUrl' required/>
+
+        <Button type='submit'>Add Movie</Button>
       </form>
     </div>
   )
