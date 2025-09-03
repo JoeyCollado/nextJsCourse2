@@ -11,6 +11,10 @@ const page = () => {
         <Link href="/add-movies">
           <button>Add Movie</button>
         </Link>
+
+        <Link href="/all-movies">
+          <button>View all movies</button>
+        </Link>
       </div>
     </div>
   );
