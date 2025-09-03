@@ -3,17 +3,22 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
-      <h1>Movie app</h1>
-      <p>Manage your favorite movies in the best way</p>
+    <div className="flex min-h-screen flex-col items-center
+    justify-center w-10/12 mx-auto p-10  text-gray-700">
+      <h1 className="text-6xl font-extrabold text-center drop-shadow-lg">Movie app</h1>
+      <p className="mt-4 text-lg text-gray-300">Manage your favorite movies in the best way</p>
 
-      <div>
+      <div className="mt-8 flex space-x-4">
         <Link href="/add-movies">
-          <button>Add Movie</button>
+          <button  className="px-6 py-3 bg-blue-600 hover:bg-blue-700
+           transition duration-300 ease-in-out text-white rounded-lg
+            shadow-md transform hover:scale-105">Add Movie</button>
         </Link>
 
         <Link href="/all-movies">
-          <button>View all movies</button>
+          <button className="px-6 py-3 bg-gray-600 hover:bg-gray-700 
+          transition duration-300 ease-in-out text-white rounded-lg
+           shadow-md transform hover:scale-105">View all movies</button>
         </Link>
       </div>
     </div>
