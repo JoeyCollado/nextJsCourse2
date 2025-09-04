@@ -39,3 +39,5 @@ export default page;
 //npx shadcn@latest add dialog
 //npx shadcn@latest add input
 //npx shadcn@latest add label
+
+//npx prisma generate
