@@ -15,7 +15,7 @@ const page = () => {
             shadow-md transform hover:scale-105">Add Movie</button>
         </Link>
 
-        <Link href="/all-movie">
+        <Link href="/all-movies">
           <button className="px-6 py-3 bg-gray-600 hover:bg-gray-700 
           transition duration-300 ease-in-out text-white rounded-lg
            shadow-md transform hover:scale-105">View all movies</button>
