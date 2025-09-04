@@ -9,13 +9,13 @@ const page = () => {
       <p className="mt-4 text-lg text-gray-300">Manage your favorite movies in the best way</p>
 
       <div className="mt-8 flex space-x-4">
-        <Link href="/add-movies">
+        <Link href="/add-movie">
           <button  className="px-6 py-3 bg-blue-600 hover:bg-blue-700
            transition duration-300 ease-in-out text-white rounded-lg
             shadow-md transform hover:scale-105">Add Movie</button>
         </Link>
 
-        <Link href="/all-movies">
+        <Link href="/all-movie">
           <button className="px-6 py-3 bg-gray-600 hover:bg-gray-700 
           transition duration-300 ease-in-out text-white rounded-lg
            shadow-md transform hover:scale-105">View all movies</button>
