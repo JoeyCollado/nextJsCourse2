@@ -1,7 +1,6 @@
-import React from 'react'
-import {z} from 'zod'
-const page = () => {
-  
+//import zod
+import {email, z} from 'zod';
+
 //zod schema (Shape)
 const userSchema = z.object({
     name: z.string(),
@@ -19,15 +18,3 @@ const userData = {
 //ask zod to validate data legitimacy
 const validUser = userSchema.parse(userData)
 console.log(validUser);
-
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default page
-
-//how to install 
-//npm i zod
