@@ -1,5 +1,5 @@
 import React from 'react'
-import {z} from 'zod'
+import {email, z} from 'zod'
 const page = () => {
   
 //zod schema (Shape)
@@ -8,17 +8,15 @@ const userSchema = z.object({
     age: z.number(),
     email: z.string().email(),
 })
-
-//create actual data
-const userData = {
-    name: "joey",
-    age: 22,
-    email: "joey123@gmail.com",
+//error validator
+const result = userSchema.safeParse({
+  name: 'Joey',
+  age: 20, 
+  email: "invalid"
+})
+if(!result.success){
+  console.log(result.error.format());
 }
-
-//ask zod to validate data legitimacy
-const validUser = userSchema.parse(userData)
-console.log(validUser);
 
   return (
     <div>
