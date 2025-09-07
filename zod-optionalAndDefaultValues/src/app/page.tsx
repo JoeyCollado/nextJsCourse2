@@ -5,8 +5,8 @@ const page = () => {
 //zod schema (Shape)
 const userSchema = z.object({
     name: z.string(),
-    age: z.number(),
-    email: z.string().email(),
+    age: z.number().optional(), //not required
+    email: z.string().email().default('default email'), //no value specified take the default value instead   
 })
 //error validator
 const result = userSchema.safeParse({
