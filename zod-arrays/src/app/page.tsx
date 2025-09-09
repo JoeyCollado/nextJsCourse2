@@ -2,10 +2,9 @@ import React from 'react'
 import {email, z} from 'zod'
 const page = () => {
   
-const hobbiesSchema = z.array(z.string()); //defining array
-const userHobbies = ["reading", "cooking", "coding"]; //assigning value
-console.log(hobbiesSchema.parse(userHobbies)); //displaying array
-
+const roleSchema = z.enum(["admin", "user", "guest"]); //defining array
+const userRole = 'admin'
+console.log(roleSchema.parse(userRole));
 
   return (
     <div>
