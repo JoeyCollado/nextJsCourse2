@@ -5,7 +5,7 @@ const page = () => {
 const roleSchema = z.enum(["admin", "user", "guest"]); //defining array
 const userRole = 'admin'
 console.log(roleSchema.parse(userRole));
-
+//enums
   return (
     <div>
       
