@@ -9,3 +9,6 @@ const page = () => {
 }
 
 export default page
+
+//shadcn initialization = npx shadcn@latest init
+
