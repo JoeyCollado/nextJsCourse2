@@ -11,4 +11,4 @@ const page = () => {
 export default page
 
 //shadcn initialization = npx shadcn@latest init
-
+//npx shadcn@latest add form card input
