@@ -1,5 +1,7 @@
 import React from 'react'
-import { Card, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 
 const page = () => {
   return (
@@ -8,6 +10,22 @@ const page = () => {
         <CardHeader>
             <CardTitle className='text-center text-xl font-semibold'>Sign up</CardTitle>
         </CardHeader>
+        <CardContent>
+          <Form>
+            <form className='space-y-4'>
+              <div>
+                <FormField name='name' render={(filed) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder='Enter your name'/>
+                    </FormControl>
+                  </FormItem>
+                )}/>
+              </div>
+            </form>
+          </Form>
+        </CardContent>
       </Card>
     </div>
   )
