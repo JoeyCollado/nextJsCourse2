@@ -26,33 +26,33 @@ const page = () => {
           <Form {...form}>
             <form className='space-y-4'>
               <div>
-                <FormField name='name' render={(filed) => (
+                <FormField name='name' render={(filled) => (
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter your name'/>
+                      <Input placeholder='Enter your name' {...filled}/>
                     </FormControl>
                   </FormItem>
                 )}/>
               </div>
               
               <div>
-                <FormField name='name' render={(filed) => (
+                <FormField name='name' render={(filled) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter your name'/>
+                      <Input type='email' placeholder='Enter your email' {...filled}/>
                     </FormControl>
                   </FormItem>
                 )}/>
               </div>
 
               <div>
-                <FormField name='name' render={(filed) => (
+                <FormField name='name' render={(filled) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
+                    <FormLabel>Password</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter your name'/>
+                      <Input type='password' placeholder='Enter your password' {...filled}/>
                     </FormControl>
                   </FormItem>
                 )}/>
