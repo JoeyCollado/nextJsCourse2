@@ -35,6 +35,28 @@ const page = () => {
                   </FormItem>
                 )}/>
               </div>
+              
+              <div>
+                <FormField name='name' render={(filed) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder='Enter your name'/>
+                    </FormControl>
+                  </FormItem>
+                )}/>
+              </div>
+
+              <div>
+                <FormField name='name' render={(filed) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder='Enter your name'/>
+                    </FormControl>
+                  </FormItem>
+                )}/>
+              </div>
             </form>
           </Form>
         </CardContent>
