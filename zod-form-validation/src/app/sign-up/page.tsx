@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { useForm } from 'react-hook-form'
+import { Button } from '@/components/ui/button';
 
 const page = () => {
 
@@ -57,11 +58,16 @@ const page = () => {
                   </FormItem>
                 )}/>
               </div>
+
+              <Button className='w-full' type='submit'></Button>
+
             </form>
           </Form>
         </CardContent>
       </Card>
     </div>
+
+   
   )
 }
 
