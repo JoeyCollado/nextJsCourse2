@@ -6,10 +6,14 @@ import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/
 import { Input } from '@/components/ui/input'
 import { useForm } from 'react-hook-form'
 import { Button } from '@/components/ui/button';
+import z from 'zod';
+import { signupSchema } from '@/schemas';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const page = () => {
 
-  const form = useForm({
+  const form = useForm<z.infer<typeof signupSchema>>({
+    resolver: zodResolver(signupSchema),
     defaultValues:{
       name: '',
       email: "",
@@ -27,7 +31,7 @@ const page = () => {
           <Form {...form}>
             <form className='space-y-4'>
               <div>
-                <FormField name='name' render={(filled) => (
+                <FormField name='name' control={form.control} render={(filled) => (
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
@@ -38,7 +42,7 @@ const page = () => {
               </div>
               
               <div>
-                <FormField name='name' render={(filled) => (
+                <FormField name='email' control={form.control} render={(filled) => (
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
@@ -49,7 +53,7 @@ const page = () => {
               </div>
 
               <div>
-                <FormField name='name' render={(filled) => (
+                <FormField name='password' control={form.control} render={(filled) => (
                   <FormItem>
                     <FormLabel>Password</FormLabel>
                     <FormControl>
