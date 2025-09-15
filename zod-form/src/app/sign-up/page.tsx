@@ -1,78 +1,111 @@
 "use client";
 
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { useForm } from 'react-hook-form'
-import { Button } from '@/components/ui/button';
-import z from 'zod';
-import { signupSchema } from '@/schemas';
-import { zodResolver } from '@hookform/resolvers/zod';
+import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import z from "zod";
+import { signupSchema } from "@/schemas";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { createUser } from "@/actions";
 
 const page = () => {
-
   const form = useForm<z.infer<typeof signupSchema>>({
     resolver: zodResolver(signupSchema),
-    defaultValues:{
-      name: '',
+    defaultValues: {
+      name: "",
       email: "",
-      password: ""
-    }
-  })
+      password: "",
+    },
+  });
+
+  async function onSubmit(values: z.infer<typeof signupSchema>) {
+    const result = await createUser(values);
+
+    return result.status === "error"
+      ? console.log(result.message)
+      : console.log(result.message);
+  }
 
   return (
-    <div className='flex min-h-screen items-center justify-center bg-gray-100'>
-      <Card className='w-full max-w-md p-6 shadow-lg'>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <Card className="w-full max-w-md p-6 shadow-lg">
         <CardHeader>
-            <CardTitle className='text-center text-xl font-semibold'>Sign up</CardTitle>
+          <CardTitle className="text-center text-xl font-semibold">
+            Sign up
+          </CardTitle>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form className='space-y-4'>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <div>
-                <FormField name='name' control={form.control} render={(filled) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder='Enter your name' {...filled}/>
-                    </FormControl>
-                  </FormItem>
-                )}/>
-              </div>
-              
-              <div>
-                <FormField name='email' control={form.control} render={(filled) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
-                    <FormControl>
-                      <Input type='email' placeholder='Enter your email' {...filled}/>
-                    </FormControl>
-                  </FormItem>
-                )}/>
+                <FormField
+                  name="name"
+                  control={form.control}
+                  render={(filled) => (
+                    <FormItem>
+                      <FormLabel>Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Enter your name" {...filled} />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
               </div>
 
               <div>
-                <FormField name='password' control={form.control} render={(filled) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input type='password' placeholder='Enter your password' {...filled}/>
-                    </FormControl>
-                  </FormItem>
-                )}/>
+                <FormField
+                  name="email"
+                  control={form.control}
+                  render={(filled) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="Enter your email"
+                          {...filled}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
               </div>
 
-              <Button className='w-full' type='submit'></Button>
+              <div>
+                <FormField
+                  name="password"
+                  control={form.control}
+                  render={(filled) => (
+                    <FormItem>
+                      <FormLabel>Password</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="password"
+                          placeholder="Enter your password"
+                          {...filled}
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              </div>
 
+              <Button className="w-full" type="submit"></Button>
             </form>
           </Form>
         </CardContent>
       </Card>
     </div>
+  );
+};
 
-   
-  )
-}
-
-export default page
+export default page;
