@@ -1,24 +1,23 @@
 "use client";
-
-import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
-import z from "zod";
-import { signupSchema } from "@/schemas";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { signupSchema } from "@/schemas";
 import { createUser } from "@/actions";
+import { z } from "zod";
 
-const page = () => {
-  const form = useForm<z.infer<typeof signupSchema>>({
+const SignUp = () => {
+  const form = useForm({
     resolver: zodResolver(signupSchema),
     defaultValues: {
       name: "",
@@ -40,66 +39,61 @@ const page = () => {
       <Card className="w-full max-w-md p-6 shadow-lg">
         <CardHeader>
           <CardTitle className="text-center text-xl font-semibold">
-            Sign up
+            Sign Up
           </CardTitle>
         </CardHeader>
         <CardContent>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
               <div>
                 <FormField
-                  name="name"
                   control={form.control}
-                  render={(filled) => (
+                  name="name"
+                  render={({ field }) => (
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter your name" {...filled} />
+                        <Input placeholder="Enter Your Name" {...field} />
                       </FormControl>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-
               <div>
                 <FormField
                   name="email"
                   control={form.control}
-                  render={(filled) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="Enter your email"
-                          {...filled}
-                        />
+                        <Input placeholder="Enter Your Email" {...field} />
                       </FormControl>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-
               <div>
                 <FormField
                   name="password"
                   control={form.control}
-                  render={(filled) => (
+                  render={({ field }) => (
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input
-                          type="password"
-                          placeholder="Enter your password"
-                          {...filled}
-                        />
+                        <Input placeholder="Enter Your Password" {...field} />
                       </FormControl>
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
 
-              <Button className="w-full" type="submit"></Button>
+              <Button className="w-full" type="submit">
+                Sign Up
+              </Button>
             </form>
           </Form>
         </CardContent>
@@ -108,4 +102,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default SignUp;
